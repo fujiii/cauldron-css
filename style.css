@@ -1,0 +1,168 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    /* background-color: rgb(25, 25, 34); */
+}
+
+.cauldron {
+    position: relative;
+    width: 15rem;
+    aspect-ratio: 4 / 3;
+    background-color: #545454;
+    border: 10px solid #000;
+    border-radius: 50%;
+    box-shadow: 10px 20px 0 0 #a5a5a5 inset;
+}
+
+.cauldron__neck {
+
+    --boil-time: 1s;
+
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;    
+    width: 90%;
+    height: 40%;
+    border: 15px solid #000000;
+    border-radius: 50%;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glow 1s linear infinite alternate;
+}
+
+[class|=boil] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #44ee44;
+}
+
+.boil-1 {
+    animation: boil var(--boil-time) linear infinite;
+}
+
+.boil-2 {
+    animation: boil var(--boil-time) linear infinite;
+    animation-delay: .25s;
+}
+
+.boil-3 {
+    animation: boil var(--boil-time) linear infinite;
+    animation-delay: .5s;
+}
+
+.boil-4 {
+    animation: boil var(--boil-time) linear infinite;
+}
+
+.boil-5 {
+    animation: boil var(--boil-time) linear infinite;
+    animation-delay: .25s;
+}
+
+.boil-6 {
+    animation: boil var(--boil-time) linear infinite;
+    animation-delay: .5s;
+}
+
+/* .eye {
+    width: 30px;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    border-radius: 59% 41% 31% 69% / 51% 49% 51% 49%;
+    background-color: #fff;
+}
+
+.eye-1 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 53% 47% 50% 50% / 50% 68% 32% 50%;
+    background-color: red;
+    right: 0;
+} */
+
+.cauldron__handle {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: rotate(345deg);
+    box-shadow: 0 -5px 0 2.5px #000 inset;
+}
+
+.cauldron__handle-detail {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.cauldron__foot {
+    width: 10%;
+    height: 25%;
+    background-color: #000;
+    position: absolute;
+    bottom: -10%;
+    z-index: -1;
+    border: 3px dotted #fff;
+}
+
+.cauldron__foot--left {
+    left: 10%;
+    transform: rotate(25deg);
+    border-radius: 0% 0% 81% 19% / 0% 0% 70% 100%;
+}
+
+.cauldron__foot--right {
+    right: 10%;
+    transform: rotate(335deg);
+    border-radius: 0% 0% 19% 81% / 0% 0% 100% 70%;
+}
+
+@keyframes boil {
+    0% {
+        background-color: #44ee44;
+        opacity: 1;
+    } 
+    25% {
+        transform: translate(-25%, -25%)
+    }
+    50% {
+        transform: translate(0, -50%)
+    }
+    75% {
+        transform: translate(25%, -75%);
+    }
+    100% {
+        background-color: #6144ff;
+        opacity: 0;
+        transform: translate(0, -100%);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 5px 0 0 #d8ff00 inset, 0 5px #313131;
+        background-color: #44ee44;
+    }
+    100% {
+        box-shadow: 0 5px 0 0 #c1b6ff inset, 0 5px #313131;
+        background-color: #6144ff;
+    }
+}
+
